@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laracarte</title>
+        <title>{{ page_title($title ?? '') }}</title>
+        {{--  <title>{{ isset($title) ? $title . ' | ' : '' }} Laracarte - List of artisans</title>  --}}
 
         <!--  Google font -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
