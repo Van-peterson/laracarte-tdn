@@ -11,10 +11,16 @@
 |
 */
 
+use App\Mail\ContactMessageCreated;
+
 Route::get('/', [
     'as' => 'root_path',
     'uses' => 'PagesController@home'
 ]);
+
+Route::get('/test-email', function () {
+    return new ContactMessageCreated('Van Peterson', 'kpeterson@hotmail.fr', 'Merci pour Laracarte');
+});
 
 Route::get('/about', [
     'as' => 'about_path',
@@ -24,6 +30,11 @@ Route::get('/about', [
 Route::get('/contact', [
     'as' => 'contact_path',
     'uses' => 'ContactController@create'
+]);
+
+Route::post('/contact', [
+    'as' => 'contact_path',
+    'uses' => 'ContactController@store'
 ]);
 
 
